@@ -18,12 +18,13 @@ const quotes = [
 
 const randomId = Math.floor(Math.random() * 3);
 
-const quote = () => {
+const quote = props => {
   return (
     <div>
       <blockquote>
-        {quotes[randomId].quote}
-        <footer>– {quotes[randomId].author}</footer>
+        {/* {quotes[randomId].quote} */}
+        {quotes[props.num].quote}
+        <footer>– {quotes[props.num].author}</footer>
       </blockquote>
     </div>
   );
