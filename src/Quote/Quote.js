@@ -1,4 +1,5 @@
 import React from 'react';
+import './Quote.css';
 
 const quotes = [
   {
@@ -400,7 +401,7 @@ const quotes = [
 const quote = props => {
   return (
     <div>
-      <blockquote>
+      <blockquote className="Quote">
         {quotes[props.quoteId].quote}
         <footer>– {quotes[props.quoteId].author}</footer>
       </blockquote>
