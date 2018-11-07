@@ -402,7 +402,7 @@ const quote = props => {
   return (
     <div>
       <blockquote className="Quote">
-        {quotes[props.quoteId].quote}
+        "{quotes[props.quoteId].quote}"
         <footer>– {quotes[props.quoteId].author}</footer>
       </blockquote>
     </div>
