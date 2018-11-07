@@ -403,7 +403,7 @@ const quote = props => {
     <div>
       <blockquote className="Quote" id="text">
         "{quotes[props.quoteId].quote}"
-        <footer>– {quotes[props.quoteId].author}</footer>
+        <footer id="author">– {quotes[props.quoteId].author}</footer>
       </blockquote>
     </div>
   );
