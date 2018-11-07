@@ -401,7 +401,7 @@ const quotes = [
 const quote = props => {
   return (
     <div>
-      <blockquote className="Quote">
+      <blockquote className="Quote" id="text">
         "{quotes[props.quoteId].quote}"
         <footer>– {quotes[props.quoteId].author}</footer>
       </blockquote>
