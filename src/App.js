@@ -17,7 +17,9 @@ class App extends Component {
     return (
       <div className="App" id="quote-box">
         <h1>Quote Generator</h1>
-        <button onClick={this.newQuoteHandler}>New Quote</button>
+        <button onClick={this.newQuoteHandler} id="new-quote">
+          New Quote
+        </button>
         <Quote quoteId={this.state.quoteId} />
       </div>
     );
