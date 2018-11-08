@@ -402,7 +402,7 @@ const quote = props => {
   return (
     <div>
       <blockquote className="Quote" id="text">
-        "{quotes[props.quoteId].quote}"
+        <span style={{ fontSize: 23 }}>"{quotes[props.quoteId].quote}"</span>
         <footer id="author">– {quotes[props.quoteId].author}</footer>
         <br />
         <div className="twitter-container">
