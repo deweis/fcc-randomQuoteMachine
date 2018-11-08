@@ -404,6 +404,20 @@ const quote = props => {
       <blockquote className="Quote" id="text">
         "{quotes[props.quoteId].quote}"
         <footer id="author">– {quotes[props.quoteId].author}</footer>
+        <br />
+        <div className="twitter-container">
+          <a
+            id="tweet-quote"
+            href={`https://twitter.com/intent/tweet?text=${
+              quotes[props.quoteId].quote
+            } (${quotes[props.quoteId].author})`}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Tweet this quote!"
+          >
+            <i className="fab fa-twitter fa-2x" />
+          </a>
+        </div>
       </blockquote>
     </div>
   );

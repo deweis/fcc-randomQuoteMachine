@@ -15,6 +15,23 @@ footer {
   margin-top: 10px;
 }
 
+.twitter-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.twitter-container a {
+  color: #009688;
+}
+
+.twitter-container a:hover {
+  filter: brightness(85%);
+}
+
+.twitter-container a:active {
+  filter: brightness(60%);
+}
+
 @keyframes fadeInOpacity {
   0% {
     opacity: 0;
