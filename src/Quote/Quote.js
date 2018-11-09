@@ -1,5 +1,6 @@
 import React from 'react';
 import './Quote.css';
+import axios from 'axios';
 
 const quotes = [
   {
@@ -398,19 +399,31 @@ const quotes = [
   }
 ];
 
+let quoteText;
+let quoteAuthor;
+
 const quote = props => {
+  if (props.quoteId === 100) {
+    axios.get('https://talaikis.com/api/quotes/random/').then(response => {
+      quoteText = response.data.quote;
+      quoteAuthor =
+        response.data.author === '' ? 'Unknown' : response.data.author;
+    });
+  } else {
+    quoteText = quotes[props.quoteId].quote;
+    quoteAuthor = quotes[props.quoteId].author;
+  }
+
   return (
     <div>
       <blockquote className="Quote" id="text">
-        <span style={{ fontSize: 23 }}>"{quotes[props.quoteId].quote}"</span>
-        <footer id="author">– {quotes[props.quoteId].author}</footer>
+        <span style={{ fontSize: 23 }}>"{quoteText}"</span>
+        <footer id="author">– {quoteAuthor}</footer>
         <br />
         <div className="twitter-container">
           <a
             id="tweet-quote"
-            href={`https://twitter.com/intent/tweet?text=${
-              quotes[props.quoteId].quote
-            } (${quotes[props.quoteId].author})`}
+            href={`https://twitter.com/intent/tweet?text=${quoteText} (${quoteAuthor})`}
             target="_blank"
             rel="noopener noreferrer"
             title="Tweet this quote!"

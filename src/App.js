@@ -13,6 +13,12 @@ class App extends Component {
     });
   };
 
+  apiQuoteHandler = () => {
+    this.setState({
+      quoteId: 100
+    });
+  };
+
   render() {
     return (
       <div className="App" id="quote-box">
@@ -20,6 +26,7 @@ class App extends Component {
         <button onClick={this.newQuoteHandler} id="new-quote">
           New Quote
         </button>
+        <button onClick={this.apiQuoteHandler}>API Quote</button>
         <Quote quoteId={this.state.quoteId} />
       </div>
     );
